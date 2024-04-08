@@ -24,7 +24,7 @@ jobs:
         run: terraform validate
 
       - name: Plan Terraform
-        env:i
+        env:
           AWS_ACCESS_KEY_ID: anaccesskey
           AWS_SECRET_ACCESS_KEY: asecretkey
           TF_VAR_env: dev
