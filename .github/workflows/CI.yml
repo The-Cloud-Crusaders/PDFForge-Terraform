@@ -24,4 +24,7 @@ jobs:
         run: terraform validate
 
       - name: Plan Terraform
+        env:
+          TF_VAR_env: dev
+          TF_VAR_project_name: devops-term-2
         run: terraform plan
