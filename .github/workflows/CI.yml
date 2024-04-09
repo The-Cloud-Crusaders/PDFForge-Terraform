@@ -25,8 +25,8 @@ jobs:
 
       - name: Plan Terraform
         env:
-          AWS_ACCESS_KEY_ID: anaccesskey
-          AWS_SECRET_ACCESS_KEY: asecretkey
+          AWS_ACCESS_KEY_ID: AKIARGQVACGH5PBSP2UV
+          AWS_SECRET_ACCESS_KEY: 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
           TF_VAR_env: dev
           TF_VAR_project_name: devops-term-2
         run: terraform plan
