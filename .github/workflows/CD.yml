@@ -27,7 +27,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Initialize Terraform
-        run: terraform init -migrate-state -backend-config "key=pdfforge/${{ github.event.pull_request.base.ref }}/terraform.tfstate"
+        run: terraform init -migrate-state -backend-config "key=pdfforge/${{ github.ref_name }}/terraform.tfstate"
       
       - name: Plan Terraform
         run: terraform plan
