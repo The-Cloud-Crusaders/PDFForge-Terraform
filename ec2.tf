@@ -37,7 +37,7 @@ resource "aws_security_group" "ec2" {
             from_port = 80
             to_port = 80
             protocol = "tcp"
-            cidr_blocks = ["0.0.0.0/0"]
+            cidr_blocks = ["99.251.147.195/32"]
             description = "Allow HTTP inbound traffic"
             ipv6_cidr_blocks = []
             prefix_list_ids = []
@@ -48,7 +48,7 @@ resource "aws_security_group" "ec2" {
             from_port = 22
             to_port = 22
             protocol = "tcp"
-            cidr_blocks = ["0.0.0.0/0"]
+            cidr_blocks = ["99.251.147.195/32"]
             description = "Allow SSH traffic"
             ipv6_cidr_blocks = []
             prefix_list_ids = []
