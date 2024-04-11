@@ -14,7 +14,6 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "devops-project-terraform-remote-backend"
-    key    = "pdfforge"
     region = "ca-central-1"
   }
 }
