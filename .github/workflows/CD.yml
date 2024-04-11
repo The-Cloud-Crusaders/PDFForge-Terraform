@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-      - prd
+      - prod
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}
@@ -12,12 +12,12 @@ concurrency:
       
 jobs:
   apply:
-    environment: ${{ github.event.pull_request.base.ref }}
+    environment: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      TF_VAR_env: ${{ github.event.pull_request.base.ref }}
+      TF_VAR_env: ${{ github.ref_name }}
       TF_VAR_project_name: devops-term-2
     steps:
       - name: Checkout code
