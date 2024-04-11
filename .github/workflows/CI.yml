@@ -6,6 +6,10 @@ on:
       - dev
       - prd
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.number }}
+  cancel-in-progress: true
+
 jobs:
   tf-validate:
     environment: ${{ github.event.pull_request.base.ref }}
@@ -34,7 +38,7 @@ jobs:
 
   assign-reviewer:
     runs-on: ubuntu-latest
-    needs: validate
+    needs: tf-validate
     permissions:
       pull-requests: write
     steps:
