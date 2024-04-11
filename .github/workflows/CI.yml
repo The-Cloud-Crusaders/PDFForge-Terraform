@@ -1,4 +1,4 @@
-name: CI workflow
+name: Terraform CI
 
 on:
   pull_request:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   terraform-job:
+    environment: ${{ github.event.pull_request.base.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,6 +29,6 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          TF_VAR_env: dev
+          TF_VAR_env: ${{ github.event.pull_request.base.ref }}
           TF_VAR_project_name: devops-term-2
         run: terraform plan
