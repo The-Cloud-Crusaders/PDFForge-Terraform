@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - dev
-      - prd
+      - prod
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.number }}
