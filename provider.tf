@@ -10,3 +10,10 @@ terraform {
 provider "aws" {
     region = "ca-central-1"
 }
+
+terraform {
+  backend "s3" {
+    bucket = "devops-project-terraform-remote-backend"
+    region = "ca-central-1"
+  }
+}
