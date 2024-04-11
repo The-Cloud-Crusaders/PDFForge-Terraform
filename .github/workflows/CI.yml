@@ -11,6 +11,8 @@ jobs:
     environment: ${{ github.event.pull_request.base.ref }}
     runs-on: ubuntu-latest
     steps:
+      - name: test
+        run: echo "${{github.event.pull_request.base.ref}}"
       - name: Checkout code
         uses: actions/checkout@v2
 
