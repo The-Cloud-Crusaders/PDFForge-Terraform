@@ -1,4 +1,4 @@
-name: CI workflow
+name: Terraform CD
 
 on:
   pull_request:
