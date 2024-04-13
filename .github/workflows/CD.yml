@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - dev
-      - prod
+
+  release:
+    types: [created]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}
