@@ -3,6 +3,10 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "${var.project_name}-${var.env}-assets"
 }
 
+resource "aws_s3_bucket" "bucket2" {
+  bucket = "c0912551-dev-assets"
+}
+
 resource "aws_s3_bucket_ownership_controls" "bucket" {
   bucket = aws_s3_bucket.bucket.id
   rule {
