@@ -43,7 +43,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Assign reviewers
-        uses: monty16597/github-pr-reviewer-request-action@main
+        uses: monty16597/github-pr-reviewer-request-action@v1.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repo_name: ${{ github.repository }}

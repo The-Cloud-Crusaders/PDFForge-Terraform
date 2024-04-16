@@ -2,3 +2,5 @@
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
+
+.dev_ssh_key
